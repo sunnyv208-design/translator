@@ -1,6 +1,6 @@
 streamlit
 openai-whisper==20231117
 torch==2.2.0
-numpy
+numpy<2
 pandas
 pydub
