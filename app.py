@@ -12,8 +12,11 @@ from pydub import AudioSegment  # for chunking
 from pydub.utils import which
 
 # Manually set ffmpeg path
-AudioSegment.converter = r"C:\ffmpeg\bin\ffmpeg.exe"
-AudioSegment.ffprobe   = r"C:\ffmpeg\bin\ffprobe.exe"
+ffmpeg_path = which("ffmpeg")
+ffprobe_path = which("ffprobe")
+
+AudioSegment.converter = ffmpeg_path
+AudioSegment.ffprobe = ffprobe_path
 
 st.set_page_config(page_title="Whisper MP3 Transcriber", layout="centered")
 st.title("🎧 Whisper MP3 Transcriber (with Translation Option)")
